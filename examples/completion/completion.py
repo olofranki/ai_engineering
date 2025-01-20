@@ -1,7 +1,13 @@
 # pylint: disable=missing-module-docstring, missing-function-docstring, invalid-name
+import sys
+import os
 from dotenv import load_dotenv
 
-from ai_eng.service.openai_service import OpenAIService
+# Dodaj ścieżkę bezpośrednio do katalogu src
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', 'src')))
+print("sys.path:", sys.path)
+
+from src.ai_eng.service.openai_service import OpenAIService
 
 load_dotenv()
 
